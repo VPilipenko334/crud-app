@@ -5,7 +5,7 @@ const api = axios.create({
 });
 
 export async function findAll() {
-  const { data } = await api.get('/jokes');
+  const { data } = await api.get('/jokes/random');
   await new Promise((resolve) => setTimeout(resolve, 2000));
   return data
 }

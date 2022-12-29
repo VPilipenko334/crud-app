@@ -11,7 +11,10 @@ const { isLoading, error, data } = useQuery(
 <template>
   <div>
     <div class="q-pa-md flex flex-center">
-      <q-circular-progress v-if="isLoading" indeterminate size="50px" />
+      <q-circular-progress
+        v-if="isLoading"
+        indeterminate
+        size="50px" />
     </div>
 
     <q-banner v-if="error" inline-actions class="text-white bg-red">

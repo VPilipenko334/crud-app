@@ -11,7 +11,7 @@ const queryList = window.matchMedia(darkQuery);
 
 if (queryList.matches) {
   $q.dark.set(true);
-  //if the user has dark mode enabled; this will be set to true/ dark mode will turn on
+  //if the user has dark mode enabled; this will be set to true
 }
 queryList.addEventListener("change", (event) => {
   if (event.matches) {
@@ -30,7 +30,7 @@ queryList.addEventListener("change", (event) => {
 
 <q-layout>
   <q-page-container>
-    <q-page  class="container">
+    <q-page class="container">
       <RouterView/>
     </q-page>
   </q-page-container>

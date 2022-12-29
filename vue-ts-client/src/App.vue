@@ -4,12 +4,20 @@ import { useQuasar } from 'quasar';
 
 const $q = useQuasar();
 
-const result = window.matchMedia('(prefers-color-scheme: dark)');
-if (result.matches) {
+const darkQuery = ('(prefers-color-scheme: dark)');
+const queryList = window.matchMedia(darkQuery);
+
+if (queryList.matches) {
   $q.dark.set(true);
   //if the user has dark mode enabled; this will be set to true/ dark mode will turn on
 }
-console.log(result.matches);
+queryList.addEventListener('change', (event) => {
+  if (event.matches) {
+    $q.dark.set(true);
+  } else {
+    $q.dark.set(false);
+  }
+});
 
 </script>
 
@@ -19,3 +27,4 @@ console.log(result.matches);
 
 <style scoped>
 </style>
+
